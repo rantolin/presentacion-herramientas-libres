@@ -32,35 +32,80 @@
 \end{frame}
 % \rowcolors{1}{ZurichBlue!20}{ZurichBlue!5}
 %%==================================================================S INTRODUCTION
-\section{Herramientas}
+\section{Software Libre}
 %%==================================================================F 
 \begin{frame}
-    \frametitle{Herramientas}
+  \frametitle{Qué es Software Libre?}
+  \begin{itemize}
+    \item 4 Libertades esenciales:
     \begin{enumerate}
-        \item GRASS LiDAR tools 
-	\begin{itemize}
-            \item \texttt{v.outlier}
-            \item \texttt{v.lidar.edgedetetion}
-            \item \texttt{v.lidar.growing}
-            \item \texttt{v.lidar.correction}
-            \item \texttt{v.surf.bspline}
-	\end{itemize}
-        \item LibLAS
-	\begin{itemize}
-            \item \texttt{las2las}, \texttt{las2txt}, \texttt{txt2las}, \texttt{lasdiff}, \texttt{lasinfo} 
-	\end{itemize}
-        \item LAStools
-	\begin{itemize}
-            \item \texttt{las2las}, \texttt{las2txt}, \texttt{txt2las},
-                \texttt{shp2las}, \texttt{lasground}, \texttt{las2dem}, \texttt{txt2tin}
-	\end{itemize}
-        \item PCL (Point Cloud Library)
-        \item PDAL (Point Data Abstraction Library)
+      \setcounter{enumi}{-1}
+      \item Libertad de \alert{usar} el programa, con cualquier propósito
+      \item Libertad de \alert{estudiar} cómo funciona el programa y \alert{modificarlo}, adaptándolo a tus necesidades.
+      \item Libertad de \alert{distribuir copias} del programa, con lo cual puedes ayudar a tu prójimo.
+      \item Libertad de \alert{mejorar} el programa y \alert{hacer públicas} esas mejoras a los demás, de modo que toda la comunidad se beneficie. 
     \end{enumerate}
+    \item Las \alert{Libertades 1} y \alert{3} requieren acceso al código fuente
+    \item La \alert{Libertad 0} nos permite tener el control sobre nuestra informatica
+    \item La \alert{Libertad 2} nos permite ayudar a nuestro prójimo
+  \end{itemize}
 \end{frame}
-%%==================================================================S
-\section{Análisis LiDAR en GRASS}
+%%==================================================================F 
+\begin{frame}
+  \frametitle{Libre vs. Abierto vs. Gratis}
+  \begin{itemize}
+    \item El término inglés \alert{\emph{free}} es ambiguo:
+    \begin{itemize}
+      \item Libre (\emph{Freedom of speach} o libertad de expresión)
+      \item Gratis (\emph{Free Beer!} o Cerveza gratis!)
+    \end{itemize}
+    \item Gratis \alert{$\ne$} Libre $\Rightarrow$ \alert{Gratis} hace referencia al precio
+    \item Libre \alert{$\ne$} Abierto
+    \begin{itemize}
+      \item \alert{Abierto} hace referencia al que el código es público
+      \item \alert{Libre} hace referencia a la libertad de uso y disponibilidad del software y su código
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+%%==================================================================F 
+\begin{frame}
+  \frametitle{Licencias}
+  \begin{itemize}
+    \item \alert{GPL}: General Public License
+    \item \alert{LPGL}: Lesser General Public License. Licencia permisiva que permite el uso del código fuente en software no libre
+    \item \alert{BSD}: Berkeley Software Distribution. Licencia permisiva que permite el uso del código fuente en software no libre
+    \item \alert{MIT}: Massachusetts Institute of Technology License
+  \end{itemize}
+\end{frame}
+%%==================================================================S INTRODUCTION
+\section{Herramientas libres y abiertas}
+%%==================================================================F 
+\begin{frame}
+  \frametitle{Herramientas}
+  \begin{enumerate}
+    \item GRASS LiDAR tools 
+    	\begin{itemize}
+        \item \texttt{v.outlier}, \texttt{v.lidar.edgedetetion}, \texttt{v.lidar.growing}, \texttt{v.lidar.correction}, \texttt{v.surf.bspline}
+    	\end{itemize}
+    \item LibLAS
+    	\begin{itemize}
+        \item \texttt{las2las}, \texttt{las2txt}, \texttt{txt2las}, \texttt{lasdiff}, \texttt{lasinfo} 
+    	\end{itemize}
+    \item LAStools
+    	\begin{itemize}
+        \item \texttt{las2las}, \texttt{las2txt}, \texttt{txt2las}, \texttt{shp2las}, \texttt{lasground}, \texttt{las2dem}, \texttt{txt2tin}
+    	\end{itemize}
+    \item SPDlib (Sorted Pulse Data Library)
+      \begin{itemize}
+        \item \texttt{spdtranslate}, \texttt{spdrmnoise}, \texttt{spdpmfgrd}, \texttt{spdmccgrd}, \texttt{spddefheight}, \texttt{spdinterp}, \texttt{spdmetrics}
+      \end{itemize}
+    \item PDAL (Point Data Abstraction Library)
+    \item PCL (Point Cloud Library)
+  \end{enumerate}
+\end{frame}
 %%==================================================================Sb
+\subsection{Análisis LiDAR en GRASS}
+%%==================================================================F
 \begin{frame}
     \frametitle{Geographic Resources Analysis Support System\hfill
         \includegraphics[width=0.7cm]{images/grasslogo_transp_big.png}} 
@@ -81,23 +126,23 @@
             \beamergotobutton{\url{http://grass.osgeo.ogr}}
     \end{itemize}
 \end{frame}
-%%==================================================================Sb
-\subsection{Importando nube de puntos}
+% %%==================================================================Sb
+% \subsubsection{Importando nube de puntos}
+% %%==================================================================F 
+% \begin{frame}
+%  \frametitle{Importar como raster: \LARGE\path{r.in.xyz}}
+% \end{frame}
+% %%==================================================================F 
+% \begin{frame}
+%  \frametitle{Importar como vectorial: \LARGE\path{v.in.ascii}}
+% \end{frame}
 %%==================================================================F 
 \begin{frame}
- \frametitle{Importar como raster: \LARGE\path{r.in.xyz}}
-\end{frame}
-%%==================================================================F 
-\begin{frame}
- \frametitle{Importar como vectorial: \LARGE\path{v.in.ascii}}
-\end{frame}
-%%==================================================================Sb
-\subsection{GRASS LiDAR tools}
-\begin{frame}
-  \frametitle{GRASS LiDAR tools}
+  \frametitle{Herramientas LiDAR de GRASS}
   Eliminación de objetos en nubes de puntos y creación de MDT's
   \begin{minipage}{0.45\textwidth}
   \begin{itemize}
+    \item<1-> \path{v.in.las}
     \item<2-> \path{v.outlier}
     \item<3-> \path{v.lidar.edgedetection}
     \item<4-> \path{v.lidar.growing}
@@ -114,7 +159,7 @@
   \end{minipage}
 \end{frame}
 %%==================================================================Sb
-\subsection{\texttt{v.outlier}}
+\subsubsection{\texttt{v.outlier}}
 %%==================================================================F 
 \begin{frame}[fragile,shrink=5]
   \frametitle{\path{v.outlier}}
@@ -145,7 +190,7 @@ GRASS6 (stuttgart): > v.outlier in=stuttgart_last out=station_last \
 \end{beamerboxesrounded}
 \end{frame}
 %%==================================================================Sb
-\subsection{\texttt{v.lidar.edgedetection}}
+\subsubsection{\texttt{v.lidar.edgedetection}}
 %%==================================================================F 
 \begin{frame}[fragile,shrink=10]
   \frametitle{\path{v.lidar.edgedetection}}
@@ -195,7 +240,7 @@ GRASS6 (stuttgart): > v.lidar.edgedetection in=station_last see=4 sen=4 \
 %\end{columns}
 %\end{frame}
 %%==================================================================Sb
-\subsection{\texttt{v.lidar.growing}}
+\subsubsection{\texttt{v.lidar.growing}}
 %%==================================================================F 
 \begin{frame}[fragile,shrink=10]
   \frametitle{\path{v.lidar.growing}}
@@ -248,7 +293,7 @@ GRASS6 (stuttgart): > v.lidar.growing in=station_edge out=station_grow \
 %\end{columns}
 %\end{frame}
 %%==================================================================Sb
-\subsection{\texttt{v.lidar.correction}}
+\subsubsection{\texttt{v.lidar.correction}}
 %%==================================================================F 
 \begin{frame}[fragile,shrink=5]
   \frametitle{\path{v.lidar.correction}}
@@ -297,8 +342,8 @@ GRASS6 (stuttgart): > v.lidar.correction in=station_grow sce=60 scn=60 \
 %  \end{column}
 %\end{columns}
 %\end{frame}
-%%==================================================================S INTRODUCTION
-\section{LAStools}
+%%==================================================================Sb
+\subsection{LAStools}
 %%==================================================================F 
 \begin{frame}
   \frametitle{LAStools}
@@ -363,6 +408,8 @@ GRASS6 (stuttgart): > v.lidar.correction in=station_grow sce=60 scn=60 \
       \end{itemize}
   \end{enumerate}
 \end{frame}
+%%==================================================================Sb
+\subsection{LASzip}
 %%==================================================================F 
   \defverbatim[colored]\laszip{
      \begin{lstlisting}[style=shell]
@@ -382,6 +429,8 @@ GRASS6 (stuttgart): > v.lidar.correction in=station_grow sce=60 scn=60 \
     \laszip
   \end{enumerate}
 \end{frame}
+%%==================================================================Sb
+\subsection{libLAS}
 %%==================================================================F 
   \defverbatim[colored]\gestion{
      \begin{lstlisting}[style=shell]
@@ -435,20 +484,105 @@ GRASS6 (stuttgart): > v.lidar.correction in=station_grow sce=60 scn=60 \
   \end{enumerate}
 \end{frame}
 %%==================================================================F 
-  \begin{frame}
-  \frametitle{Propiedades de los puntos}
-x
-y
-z
-intensity
-return\_number
-number\_of\_returns
-scan\_direction
-flightline\_edge
-classification
-scan\_angle
-user\_data
+%   \begin{frame}
+%   \frametitle{Propiedades de los puntos}
+%   \begin{itemize}
+%     \item \(X, Y, Z\)
+%     \item intensity
+%     \item return\_number
+%     \item number\_of\_returns
+%     \item scan\_direction
+%     \item flightline\_edge
+%     \item classification
+%     \item scan\_angle
+%     \item user\_data
+%   \end{itemize}
+% \end{frame}
+%%==================================================================Sb
+\subsection{SPDlib}
+%%==================================================================F 
+\begin{frame}
+  \frametitle{SPDlib}
+  \begin{enumerate}
+    \item \alert{SPDlib}: \alert{S}orted \alert{P}ulse \alert{D}ata
+            \alert{Lib}rary
+    \item Biblioteca de funciones para la manipulación, procesado y análisis de datos LiDAR
+    \item C++
+    \item Bindings:
+      \begin{itemize}
+        \item C++
+        \item Python
+        \item IDL
+      \end{itemize}
+    \item Licencia \alert{GPLv3 y MIT-X}
+    \item \beamergotobutton{\url{http://www.spdlib.org/doku.php}}
+  \end{enumerate}
 \end{frame}
+%%==================================================================F 
+\defverbatim[colored]\spdlib{
+    \begin{lstlisting}[style=shell]
+    $ # Transformar de LAS a SPD
+    $ spdtranslate -i Ejemplo.las --if LAS -o Ejemplo.spd --of SPD -b 1 -x FIRST_RETURN
+    $ # Eliminar puntos groseros (si fuera necesario)
+    $ spdrmnoise -i Ejemplo.spd -o Ejemplo_SinRuido.spd --relup 50 
+    $ # Clasificar puntos terreno: Algoritmo morfologico 
+    $ spdpmfgrd -i Ejemplo.spd -o Ejemplo_pmfgrd.spd
+    $ # Clasificar puntos terreno: Algoritmo de curvatura multiple
+    $ spdmccgrd -i Ejemplo.spd -o Ejemplo_mccgrd.spd
+    $ # Definir altura relativa al terreno
+    $ spddefheight --interp -i Ejemplo_mccgrd.spd -o Ejemplo_alturas.spd
+    \end{lstlisting}
+  }
+\begin{frame}
+  \frametitle{SPDlib}
+  \begin{itemize}
+    \item Ejemplo de utilización de SPDlib:
+  \end{itemize}
+  \spdlib
+\end{frame}
+%%==================================================================F 
+\defverbatim[colored]\spdlibModels{
+    \begin{lstlisting}[style=shell]
+$ # Generar modelos
+$ spdinterp --dtm --topo -i Ejemplo_mccgrd.spd -o DTM.tif -b 1 -f GTiff
+$ spdinterp --dsm --height -i Ejemplo_mccgrd.spd -o CHM.tif -b 1 -f GTiff
+$ spdinterp --dsm --topo -i Ejemplo.spd -o DSM.tif -b 1 -f GTiff
+$ # Generar de metricas
+$ spdmetrics -i Ejemplo_alturas.spd -o metricas.tif -m metricas.xml -f GTiff -b 10
+    \end{lstlisting}
+  }
+\begin{frame}
+  \frametitle{SPDlib}
+  \begin{itemize}
+    \item Generación de modelos y métricas con SPDlib:
+  \end{itemize}
+  \spdlibModels
+\end{frame}
+%%==================================================================F 
+\defverbatim[colored]\spdmetrics{
+    \begin{lstlisting}[language=XML,
+    morekeywords={spdlib,metric,metrics,field,percentile,return,class,lowthreshold},
+    keywordstyle=\color{blue},commentstyle=\color{green!35!black}]
+<!--
+  Description:
+    XML File for execution within SPDLib
+    
+  Created by Roberto Antolin on Thu Jan 30 16:33:36 2014.
+  Copyright (c) 2014 Roberto Antolin.
+-->
+<spdlib:metrics xmlns:spdlib="http://www.spdlib.org/xml/">
+    <spdlib:metric metric="hscoi" field="hscoi" return="First" class="NotGrd" lowthreshold="2" vres="0.5"/>
+    <spdlib:metric metric="percentileheight" field="95thPerH" percentile="95" return="All" class="NotGrd" lowthreshold="0.1" />
+    <spdlib:metric metric="percentileheight" field="50thPerH" percentile="50" return="All" class="NotGrd" lowthreshold="0.1" />
+</spdlib:metrics>
+\end{lstlisting}
+  }
+\begin{frame}
+  \frametitle{SPDlib: Ejemplo de metrica en XML}
+  \spdmetrics
+\end{frame}
+%%==================================================================Sb
+\subsection{PDAL}
 %%==================================================================F 
 \begin{frame}
   \frametitle{PDAL}
@@ -456,13 +590,50 @@ user\_data
     \item \alert{PDAL}: \alert{P}oint \alert{D}ata \alert{A}bstraction
             \alert{L}ibrary
     \item Biblioteca de funciones para la transformación de nubes de datos LiDAR
-      a varios formatos (tipo GDAL)
+      a varios formatos (Similar a GDAL)
     \item C++
     \item Licencia \alert{BSD}
-    \item \beamergotobutton{\url{http://pointcloud.org/}}
-    \item<2> \alert{¡NO CONFUNDIR CON PCL!}
+    \item \beamergotobutton{\url{http://www.pdal.io/}}
+    \item \alert{¡NO CONFUNDIR CON PCL!}
   \end{enumerate}
 \end{frame}
+%%==================================================================F 
+\begin{frame}
+  \frametitle{PDAL}
+  \begin{enumerate}
+    \item \alert{translate}: Convierte archivos según su extensión
+    \item \alert{info}: Vuelca en pantalla información relativa a la nube de puntos:
+      \begin{itemize}
+        \item Propiedades básicas (extensión, número de puntos, formato de los puntos...) 
+        \item Sistema de referencia de coordenadas
+        \item Metadatos
+      \end{itemize}
+    \item \alert{pipeline}: Ejecuta instrucciones de un XML (amplía funcionalidad de PDAL) 
+    \item \alert{query}: Selecciona el punto más cercano en la nube para cada punto dentro de un archivo dado
+  \end{enumerate}
+\end{frame}
+%%==================================================================F 
+\defverbatim[colored]\pdaltools{
+    \begin{lstlisting}[style=shell]
+    $ # Listar los primeros 10 puntos de un archivo .las
+    $ pdal info mi_archivo.las -p 0-10
+
+    $ # Transformar de LAS a LAZ
+    $ pdal translate input.las --compress output.laz
+
+    $ # Ejecutar un archivo XML
+    $ pdal pipeline --stdin < mi_xml.xml
+    \end{lstlisting}
+  }
+\begin{frame}
+  \frametitle{PDAL}
+  \begin{itemize}
+    \item Ejemplo de utilización de PDAL:
+  \end{itemize}
+  \pdaltools
+\end{frame}
+%%==================================================================Sb
+\subsection{PCL}
 %%==================================================================F 
 \begin{frame}
   \frametitle{PCL}
@@ -472,12 +643,14 @@ user\_data
     \item Paquetes multiplataforma
     \item Licencia \alert{BSD}
     \item \beamergotobutton{\url{http://pointclouds.org/}}
-    \item<2> \alert{¡NO CONFUNDIR CON PDAL!}
+    \item \alert{¡NO CONFUNDIR CON PDAL!}
   \end{enumerate}
     \begin{picture}(350,90)
     \put(180,0){\includegraphics[width=0.45\textwidth]{images/mug}}
     \end{picture}
 \end{frame}
+%%==================================================================S
+\section{Datos Abiertos}
 %%==================================================================F 
 \begin{frame}
   \frametitle{¡Datos LIBRES!}
@@ -510,77 +683,6 @@ user\_data
     \uncover<4->{\put(170,-10){\includegraphics[width=0.48\textwidth]{images/minnesota_laz}}}
     \end{picture}
 \end{frame}
-%%==================================================================S 
-\section{Procesamiento con LAStools}
-%%==================================================================Sb
-\subsection{Control de Calidad}
-%%==================================================================F
-  \defverbatim[colored]\calidad{
-    \begin{lstlisting}[language=bash,style=shell]
-C:\> # Resumen de todo el contenido de los archvios LAS
-C:\> lasinfo -i *.las -compute_density
-C:\> # Inspeccion visual de los LAS
-C:\> lasview -i *.las 
-C:\> # Calcular el contorno y los huecos del vuelo LiDAR
-C:\> lasboundary  -i *.las  -holes  -disjoint  -oshp
-C:\> # Crear una malla con la densidad puntual y visualizarla en falso color
-C:\> lasgrid -i *.las  -density  -step 3  -set_minmax 0 20 -false  -opng  -utm 28N
-C:\> # Determinar si existen puntos repetidos
-C:\> lasduplicate  -i *.las  -unique_xyz  -onil
-C:\> # Comprobar la alineacion vertical y horizontal de las pasadas
-C:\> lasoverlap  -i *.las  -step 3
-    \end{lstlisting}
-  }
-\begin{frame}
-  \frametitle{Control de Calidad}
-\calidad
-\end{frame}
-%%==================================================================F
-  \defverbatim[colored]\preparacion{
-    \begin{lstlisting}[language=bash,style=shell]
-C:\> # Mejora de los datos y reproyeccion
-C:\> las2las  -i *.las -rescale 0.01 0.01 0.01  -utm 28N  -olaz  -odix  l
-C:\> # Unir todos los archivos y dividir los datos en teselas
-C:\> lastile -i *l.laz  -tile_size 500  -buffer 30  -olaz  -o tiles
-C:\> # Clasificar puntos terreno (class 2)
-C:\> lasground  -i tiles*.laz  -fine  -olaz  -odix g
-C:\> # Calcular la altura de los objetos respecto al terreno
-C:\> lasheight  -i tiles*g.laz  -olaz  -odix h
-C:\> # Clasificar los puntos no-terreno en edificios
-C:\> # (class 6) y vegetacion (class 5)
-C:\> lasclassify  -i tiles*gh.laz  -olaz  -odix c
-C:\> # Calcular la altura de los objetos y 
-C:\> # reemplazar la anterior
-C:\> lasheight  -i tiles*ghc.laz  -replace_z  -olaz  -odix h
-    \end{lstlisting}
-  }
-\begin{frame}
-  \frametitle{Preparación de los datos}
-\preparacion
-\end{frame}
-%%==================================================================F
-  \defverbatim[colored]\derivados{
-    \begin{lstlisting}[language=bash,style=shell]
-C:\> # Triangular puntos en un TIN y un raster (DSM)
-C:\> las2dem  -i tiles*.laz  -first_only  -step 2.5  -use_tile_bb  -otif
-C:\> # Triangular puntos en un TIN y un raster (DTM)
-C:\> las2dem  -i tiles*g.laz  -keep_class 2  -step 2.5  -use_tile_bb  -ocut 1  -otif
-C:\> # Encontrar la altura maxima en cada celda y exportar a PNG
-C:\> lasgrid  -i tiles*ghch.laz  -step 2.5  -use_tile_bb  -highest -false  -ocut 4  -opng
-C:\> # Estimar la densidad de la vegetacion baja, media y alta
-C:\> # contando los puntos por celda que caen en diferentes 
-C:\> # intervalos de altura: 30cm-99cm; 1m-1.99m; 2m-3.99m
-C:\> lasgrid  -i tiles*ghch.laz  -step 2.5  -clip_z 0.3 0.99  -density  -odix low  -oasc
-C:\> lasgrid  -i tiles*ghch.laz  -step 2.5  -clip_z 1.0 1.99  -density  -odix mid1  -oasc
-C:\> lasgrid  -i tiles*ghch.laz  -step 2.5  -clip_z 2.0 3.99  -density  -odix mid2  -oasc
-    \end{lstlisting}
-  }
-\begin{frame}
-  \frametitle{Cartografía derivada: Estudios Forestales}
-\derivados
-\end{frame}
-
-
 %%==================================================================F
 \againframe{portada}
 %%==================================================================F
